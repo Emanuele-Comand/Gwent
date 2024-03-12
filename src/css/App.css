@@ -20,9 +20,14 @@
 
 .container {
   width: 100%;
-  max-width: calc(1440px - 220px);
+  max-width: calc(1440px - 160px);
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.main{
+  display: flex;
+  justify-content: space-between;
 }
 
 html, body {

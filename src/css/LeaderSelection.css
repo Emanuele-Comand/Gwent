@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+.component-wrapper {
+    margin-top: 150px;
+}
+
+.leader-title {
+    text-align: center;
+    color: #b89e14;
+}
+
+p {
+    text-align: center;
+}
+
+.data-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

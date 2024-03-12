@@ -1,3 +1,4 @@
+import axios from "axios";
 import "../css/DeckSelection.css";
 import northern from "../assets/icons/Tw3_gwent_deck_Northern_Realms.webp";
 import nilfgaard from "../assets/icons/Tw3_gwent_deck_Nilfgaardian.webp";
@@ -6,26 +7,45 @@ import scoiatael from "../assets/icons/Tw3_gwent_deck_Scoiatael.webp";
 import arrowLeft from "../assets/icons/arrow-left-svgrepo-com.svg";
 import arrowRight from "../assets/icons/arrow-right-svgrepo-com.svg";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const DeckSelection = () => {
   const empiresArray = [
     {
       empireName: "Northern Realms",
       empireLogo: northern,
+      empireEffect: "Draw a card from your deck whenever you win a round.",
     },
     {
       empireName: "Nilfgaardian Empire",
       empireLogo: nilfgaard,
+      empireEffect: "Win whenever there is a draw.",
     },
     {
       empireName: "Monsters",
       empireLogo: monsters,
+      empireEffect:
+        "One randomly-chosen Monsters Unit Card stays on the battlefield after each round.",
     },
     {
       empireName: "Scoia'Tael",
       empireLogo: scoiatael,
+      empireEffect: "You decide who goes first at the start of the battle.",
     },
   ];
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://raw.githubusercontent.com/day-s-ea/API-Gwent/main/gwentCard.json"
+      )
+      .then((result) => {
+        console.log(result.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   const [currentIndex, setIndex] = useState(0);
   const goToNext = () => {
     // Se il prossimo elemento dell'array non esiste, setta la funzione setIndex sull'indice 0
@@ -95,7 +115,7 @@ const DeckSelection = () => {
         </div>
       </div>
       <div className="description">
-        Una carta unità mostro resta in campo al termine di ogni round
+        {empiresArray[currentIndex].empireEffect}
       </div>
     </>
   );

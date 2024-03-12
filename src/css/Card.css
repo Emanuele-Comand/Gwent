@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+.cards-container {
+    width: 440px;
+    height: 65dvh;
+    margin-top: 10px;
+    background: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
