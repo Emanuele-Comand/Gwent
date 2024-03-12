@@ -1,7 +1,11 @@
 import "../css/CardsCollection.css";
-import closeCombat from "../assets/icons/Tw3_gwent_close_combat.webp";
-import ranged from "../assets/icons/Tw3_gwent_ranged_combat.webp";
-import siege from "../assets/icons/Tw3_gwent_siege.webp";
+import allCards from "../assets/icons/icone menù gwent/double_cards.svg";
+import closeCombat from "../assets/icons/icone menù gwent/sword.svg";
+import ranged from "../assets/icons/icone menù gwent/bow.svg";
+import siege from "../assets//icons/icone menù gwent/siege.svg";
+import knight from "../assets//icons/icone menù gwent/knight.svg";
+import weather from "../assets//icons/icone menù gwent/sun.svg";
+import special from "../assets//icons/icone menù gwent/special.svg";
 import { useState } from "react";
 import Card from "./Card";
 
@@ -23,10 +27,10 @@ const CardsCollection = ({ cards }) => {
           <img src={siege} style={{ height: "33px" }} alt=""></img>
         </li>
         <li className="category">
-          <img src={closeCombat} style={{ height: "33px" }} alt=""></img>
+          <img src={knight} style={{ height: "33px" }} alt=""></img>
         </li>
         <li className="category">
-          <img src={ranged} style={{ height: "33px" }} alt=""></img>
+          <img src={weather} style={{ height: "33px" }} alt=""></img>
         </li>
         <li className="category">
           <img src={siege} style={{ height: "33px" }} alt=""></img>

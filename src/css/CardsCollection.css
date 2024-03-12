@@ -45,12 +45,10 @@
     transition: 0.7s;
 }
 
-.card {
+ .card {
     width: 120px;
     height: 200px;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-bottom: 30px;
-    border-radius: 15px;
-    background: #fff;
     place-self: center;
-}
+} 

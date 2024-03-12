@@ -13,7 +13,7 @@ const Card = ({ data }) => {
             data.img.faction
           }
           alt=""
-          className="cards-container"
+          className="card"
         ></img>
       </div>
     </>

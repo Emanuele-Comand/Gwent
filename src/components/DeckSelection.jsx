@@ -9,7 +9,7 @@ import arrowRight from "../assets/icons/arrow-right-svgrepo-com.svg";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const DeckSelection = () => {
+const DeckSelection = ({ onDeckChange }) => {
   const empiresArray = [
     {
       empireName: "Northern Realms",
@@ -28,24 +28,12 @@ const DeckSelection = () => {
         "One randomly-chosen Monsters Unit Card stays on the battlefield after each round.",
     },
     {
-      empireName: "Scoia'Tael",
+      empireName: "Scoiatael",
       empireLogo: scoiatael,
       empireEffect: "You decide who goes first at the start of the battle.",
     },
   ];
 
-  useEffect(() => {
-    axios
-      .get(
-        "https://raw.githubusercontent.com/day-s-ea/API-Gwent/main/gwentCard.json"
-      )
-      .then((result) => {
-        console.log(result.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
   const [currentIndex, setIndex] = useState(0);
   const goToNext = () => {
     // Se il prossimo elemento dell'array non esiste, setta la funzione setIndex sull'indice 0
@@ -66,6 +54,11 @@ const DeckSelection = () => {
       setIndex(currentIndex - 1);
     }
   };
+
+  useEffect(() => {
+    onDeckChange(empiresArray[currentIndex].empireName);
+  }, [currentIndex]);
+
   return (
     <>
       <div className="deck-wrapper">

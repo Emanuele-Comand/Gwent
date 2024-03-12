@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
-  const [deckName, setDeckName] = useState(0);
+  const [deckName, setDeckName] = useState("");
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -20,7 +20,6 @@ function App() {
         setData(result.data);
       })
       .catch((error) => {
-        debugger;
         console.log(error);
       });
   }, []);
@@ -29,11 +28,17 @@ function App() {
     <>
       <div className="container">
         <section className="header">
-          <DeckSelection />
+          <DeckSelection onDeckChange={(deck) => setDeckName(deck)} />
         </section>
         <section className="main">
           <div className="cardsCollection-wrapper">
-            <CardsCollection cards={data} />
+            <CardsCollection
+              cards={data.filter(
+                (d) =>
+                  d.attributes.deck === deckName &&
+                  d.attributes.type !== "Leaders"
+              )}
+            />
           </div>
           <div className="leaderSelection-wrapper">
             <LeaderSelection />

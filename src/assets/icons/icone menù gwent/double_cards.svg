@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Livello_2" data-name="Livello 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 33">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1d1d1b;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <g id="icone">
+    <g id="carte">
+      <path class="cls-1" d="M16.41,0H1.9C.85,0,0,.85,0,1.9v22.09c0,1.06.86,1.91,1.91,1.91h5.59V7.83c0-1.04.84-1.88,1.88-1.88h8.93V1.91c0-1.05-.85-1.91-1.91-1.91Z"/>
+      <rect class="cls-1" x="8.36" y="6.89" width="19.64" height="26.11" rx="1.9" ry="1.9"/>
+    </g>
+  </g>
+</svg>
