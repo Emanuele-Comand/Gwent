@@ -12,4 +12,4 @@ This project has been created solely for educational purposes. Therefore, it is 
 
 ### Credits
 
-Special thanks to three young front-end developers for their contributions to this project:: [Emanuele-Comand](https://github.com/Emanuele-Comand), [day-s-ea](https://github.com/day-s-ea) and [sara-musuruana](https://github.com/sara-musuruana).
+Special thanks to three young front-end developers for their contributions to this project: [Emanuele-Comand](https://github.com/Emanuele-Comand), [day-s-ea](https://github.com/day-s-ea) and [sara-musuruana](https://github.com/sara-musuruana).
