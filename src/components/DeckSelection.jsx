@@ -1,4 +1,3 @@
-import axios from "axios";
 import "../css/DeckSelection.css";
 import northern from "../assets/icons/Tw3_gwent_deck_Northern_Realms.webp";
 import nilfgaard from "../assets/icons/Tw3_gwent_deck_Nilfgaardian.webp";
@@ -13,6 +12,7 @@ const DeckSelection = ({ onDeckChange }) => {
   const empiresArray = [
     {
       empireName: "Northern Realms",
+
       empireLogo: northern,
       empireEffect: "Draw a card from your deck whenever you win a round.",
     },
@@ -44,6 +44,8 @@ const DeckSelection = ({ onDeckChange }) => {
       setIndex(currentIndex + 1);
     }
   };
+
+  console.log(currentIndex);
 
   const goToPrev = () => {
     // Se siamo all'inizio dell'array,

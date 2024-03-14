@@ -8,7 +8,13 @@ import axios from "axios";
 
 function App() {
   const [deckName, setDeckName] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCards, setSelectedCards] = useState([]);
+
   const [data, setData] = useState([]);
+  const addCardToDeck = (card) => {
+    setSelectedCards((prevCards) => [...prevCards, card]);
+  };
 
   useEffect(() => {
     axios
@@ -16,7 +22,6 @@ function App() {
         `https://raw.githubusercontent.com/day-s-ea/API-Gwent/main/gwentCard.json`
       )
       .then((result) => {
-        console.log(result.data);
         setData(result.data);
       })
       .catch((error) => {
@@ -36,18 +41,25 @@ function App() {
               cards={data.filter(
                 (d) =>
                   d.attributes.deck === deckName &&
-                  d.attributes.type !== "Leaders"
+                  d.attributes.type !== "Leaders" &&
+                  (selectedCategory === "" ||
+                    d.attributes.row === selectedCategory)
               )}
+              onCardClick={addCardToDeck}
+              selectedCategory={selectedCategory}
+              onCategoryClick={setSelectedCategory}
             />
           </div>
           <div className="leaderSelection-wrapper">
             <LeaderSelection />
           </div>
           <div className="deckCards-wrapper">
-            <DeckCards />
+            <DeckCards
+              cards={selectedCards}
+              onCategoryClick={setSelectedCategory}
+            />
           </div>
         </section>
-        <section></section>
       </div>
       <div className="background">
         <div id="foglayer_01" className="fog">

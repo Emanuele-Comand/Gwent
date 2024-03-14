@@ -1,5 +1,8 @@
 import "../css/LeaderSelection.css";
-import closeCombat from "../assets/icons/Tw3_gwent_close_combat.webp";
+import pileCards from "../assets/icons/icone menù gwent/pile_cards.svg";
+import unitCards from "../assets/icons/icone menù gwent/units_cards.svg";
+import specialCards from "../assets/icons/icone menù gwent/special_cards.svg";
+import knight from "../assets/icons/icone menù gwent/knight.svg";
 
 const LeaderSelection = () => {
   return (
@@ -9,35 +12,55 @@ const LeaderSelection = () => {
         <div className="total-wrapper">
           <p>Total cards in deck</p>
           <div className="data-wrapper">
-            <img src={closeCombat} alt="" height={"25px"}></img>
+            <img
+              src={pileCards}
+              alt=""
+              style={{ height: "25px", filter: "invert(0.4) sepia(1)" }}
+            ></img>
             <span>n°</span>
           </div>
         </div>
         <div className="unit-wrapper">
           <p>Number of Unit Cards in deck</p>
           <div className="data-wrapper">
-            <img src={closeCombat} alt="" height={"25px"}></img>
+            <img
+              src={unitCards}
+              alt=""
+              style={{ height: "25px", filter: "invert(0.4) sepia(1)" }}
+            ></img>
             <span>n°</span>
           </div>
         </div>
         <div className="special-wrapper">
           <p>Special Cards in deck</p>
           <div className="data-wrapper">
-            <img src={closeCombat} alt="" height={"25px"}></img>
+            <img
+              src={unitCards}
+              alt=""
+              style={{ height: "25px", filter: "invert(0.4) sepia(1)" }}
+            ></img>
             <span>n°</span>
           </div>
         </div>
         <div className="strength-wrapper">
           <p>Total Unit Cards Strength</p>
           <div className="data-wrapper">
-            <img src={closeCombat} alt="" height={"25px"}></img>
+            <img
+              src={specialCards}
+              alt=""
+              style={{ height: "25px", filter: "invert(0.4) sepia(1)" }}
+            ></img>
             <span>n°</span>
           </div>
         </div>
         <div className="hero-wrapper">
           <p>Hero Cards</p>
           <div className="data-wrapper">
-            <img src={closeCombat} alt="" height={"25px"}></img>
+            <img
+              src={knight}
+              alt=""
+              style={{ height: "25px", filter: "invert(0.4) sepia(1)" }}
+            ></img>
             <span>n°</span>
           </div>
         </div>

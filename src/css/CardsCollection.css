@@ -31,13 +31,16 @@
 .categories {
     list-style: none;
     display: flex;
-    gap: 28px;
+    justify-content: space-between;
     margin: 0;
     padding: 0;
 }
 
+
+
 .category > img {
     cursor: pointer;
+    gap: 35px;
 }
 
 .category > img:hover {
@@ -45,10 +48,3 @@
     transition: 0.7s;
 }
 
- .card {
-    width: 120px;
-    height: 200px;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    place-self: center;
-} 

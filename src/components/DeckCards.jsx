@@ -1,49 +1,76 @@
 import "../css/DeckCards.css";
-import closeCombat from "../assets/icons/Tw3_gwent_close_combat.webp";
-import ranged from "../assets/icons/Tw3_gwent_ranged_combat.webp";
-import siege from "../assets/icons/Tw3_gwent_siege.webp";
+import allCards from "../assets/icons/icone menù gwent/double_cards.svg";
+import closeCombat from "../assets/icons/icone menù gwent/sword.svg";
+import ranged from "../assets/icons/icone menù gwent/bow.svg";
+import siege from "../assets//icons/icone menù gwent/siege.svg";
+import knight from "../assets//icons/icone menù gwent/knight.svg";
+import weather from "../assets//icons/icone menù gwent/sun.svg";
+import special from "../assets//icons/icone menù gwent/special.svg";
+import Card from "./Card";
 
-const DeckCards = () => {
+const DeckCards = ({ cards, selectedCategory }) => {
   return (
     <>
       <h3 className="title">Deck Cards</h3>
       <h4 className="category-title">All cards</h4>
       <ul className="categories">
         <li className="category">
-          <img src={closeCombat} style={{ height: "33px" }} alt=""></img>
+          <img
+            src={allCards}
+            style={{
+              height: "33px",
+              filter: "invert(0.4) sepia(1)",
+            }}
+            alt=""
+          ></img>
         </li>
         <li className="category">
-          <img src={ranged} style={{ height: "33px" }} alt=""></img>
+          <img
+            src={closeCombat}
+            style={{ height: "33px", filter: "invert(0.4) sepia(1)" }}
+            alt=""
+          ></img>
         </li>
         <li className="category">
-          <img src={siege} style={{ height: "33px" }} alt=""></img>
+          <img
+            src={ranged}
+            style={{ height: "33px", filter: "invert(0.4) sepia(1)" }}
+            alt=""
+          ></img>
         </li>
         <li className="category">
-          <img src={closeCombat} style={{ height: "33px" }} alt=""></img>
+          <img
+            src={siege}
+            style={{ height: "33px", filter: "invert(0.4) sepia(1)" }}
+            alt=""
+          ></img>
         </li>
         <li className="category">
-          <img src={ranged} style={{ height: "33px" }} alt=""></img>
+          <img
+            src={knight}
+            style={{ height: "33px", filter: "invert(0.4) sepia(1)" }}
+            alt=""
+          ></img>
         </li>
         <li className="category">
-          <img src={siege} style={{ height: "33px" }} alt=""></img>
+          <img
+            src={weather}
+            style={{ height: "33px", filter: "invert(0.4) sepia(1)" }}
+            alt=""
+          ></img>
         </li>
         <li className="category">
-          <img src={siege} style={{ height: "33px" }} alt=""></img>
+          <img
+            src={special}
+            style={{ height: "33px", filter: "invert(0.4) sepia(1)" }}
+            alt=""
+          ></img>
         </li>
       </ul>
       <div className="cards-container">
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
-        <div className="card"></div>
+        {cards.map((c) => (
+          <Card data={c} />
+        ))}
       </div>
     </>
   );
