@@ -1,8 +1,8 @@
 import "../css/LeaderSelection.css";
-import pileCards from "../assets/icons/icone menù gwent/pile_cards.svg";
-import unitCards from "../assets/icons/icone menù gwent/units_cards.svg";
-import specialCards from "../assets/icons/icone menù gwent/special_cards.svg";
-import knight from "../assets/icons/icone menù gwent/knight.svg";
+import pileCards from "../assets/icons/icone_menu_gwent/pile_cards.svg";
+import unitCards from "../assets/icons/icone_menu_gwent/units_cards.svg";
+import specialCards from "../assets/icons/icone_menu_gwent/special_cards.svg";
+import knight from "../assets/icons/icone_menu_gwent/knight.svg";
 
 const LeaderSelection = () => {
   return (

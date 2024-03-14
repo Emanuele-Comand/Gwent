@@ -1,11 +1,11 @@
 import "../css/CardsCollection.css";
-import allCards from "../assets/icons/icone menù gwent/double_cards.svg";
-import closeCombat from "../assets/icons/icone menù gwent/sword.svg";
-import ranged from "../assets/icons/icone menù gwent/bow.svg";
-import siege from "../assets//icons/icone menù gwent/siege.svg";
-import knight from "../assets//icons/icone menù gwent/knight.svg";
-import weather from "../assets//icons/icone menù gwent/sun.svg";
-import special from "../assets//icons/icone menù gwent/special.svg";
+import allCards from "../assets/icons/icone_menu_gwent/double_cards.svg";
+import closeCombat from "../assets/icons/icone_menu_gwent/sword.svg";
+import ranged from "../assets/icons/icone_menu_gwent/bow.svg";
+import siege from "../assets//icons/icone_menu_gwent/siege.svg";
+import knight from "../assets//icons/icone_menu_gwent/knight.svg";
+import weather from "../assets//icons/icone_menu_gwent/sun.svg";
+import special from "../assets//icons/icone_menu_gwent/special.svg";
 import Card from "./Card";
 
 const CardsCollection = ({
