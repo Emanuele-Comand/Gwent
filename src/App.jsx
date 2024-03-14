@@ -1,7 +1,7 @@
 import "./css/App.css";
 import DeckSelection from "./components/DeckSelection";
 import CardsCollection from "./components/CardsCollection";
-import LeaderSelection from "./components/LeaderSelection";
+import CentralSelection from "./components/CentralSelection";
 import DeckCards from "./components/DeckCards";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -51,7 +51,7 @@ function App() {
             />
           </div>
           <div className="leaderSelection-wrapper">
-            <LeaderSelection />
+            <CentralSelection />
           </div>
           <div className="deckCards-wrapper">
             <DeckCards

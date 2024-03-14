@@ -1,4 +1,4 @@
-import "../css/DeckCards.css";
+import "../css/CardsCollection.css";
 import allCards from "../assets/icons/menu_icons/double_cards.svg";
 import closeCombat from "../assets/icons/menu_icons/sword.svg";
 import ranged from "../assets/icons/menu_icons/bow.svg";

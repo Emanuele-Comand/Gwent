@@ -13,7 +13,7 @@ const Card = ({ data, onCardClick }) => {
             data.img.faction
           }
           alt=""
-          className="card"
+          style={{ width: "145px" }}
         ></img>
       </div>
     </>

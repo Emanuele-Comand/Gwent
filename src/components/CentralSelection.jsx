@@ -1,4 +1,4 @@
-import "../css/LeaderSelection.css";
+import "../css/CentralSelection.css";
 import pileCards from "../assets/icons/menu_icons/pile_cards.svg";
 import unitCards from "../assets/icons/menu_icons/units_cards.svg";
 import specialCards from "../assets/icons/menu_icons/special_cards.svg";
