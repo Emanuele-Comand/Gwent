@@ -1,8 +1,8 @@
 import "../css/DeckSelection.css";
-import northern from "../assets/icons/Tw3_gwent_deck_Northern_Realms.webp";
-import nilfgaard from "../assets/icons/Tw3_gwent_deck_Nilfgaardian.webp";
-import monsters from "../assets/icons/Tw3_gwent_deck_Monsters.webp";
-import scoiatael from "../assets/icons/Tw3_gwent_deck_Scoiatael.webp";
+import northern from "../assets/icons/deck_Northern_Realms.webp";
+import nilfgaard from "../assets/icons/deck_Nilfgaardian.webp";
+import monsters from "../assets/icons/deck_Monsters.webp";
+import scoiatael from "../assets/icons/deck_Scoiatael.webp";
 import arrowLeft from "../assets/icons/arrow-left-svgrepo-com.svg";
 import arrowRight from "../assets/icons/arrow-right-svgrepo-com.svg";
 import { useState } from "react";
@@ -74,30 +74,29 @@ const DeckSelection = ({ onDeckChange }) => {
         <div onClick={goToPrev} className="prev-btn btn">
           <img src={arrowLeft} alt="" style={{ height: "25px" }}></img>
         </div>
-        <div className="carousel-wrapper">
-          <div className="deck">
-            <img
-              src={empiresArray[currentIndex].empireLogo}
-              alt=""
-              height={"50px"}
-              style={{ marginRight: "20px" }}
-            ></img>
-            <div className="deck-nav">
-              <div className="deck-name">
-                {empiresArray[currentIndex].empireName}
-              </div>
-              <div className="carousel-nav">
-                {empiresArray.map((empire, index) => (
-                  <li
-                    key={index}
-                    className={
-                      currentIndex === index
-                        ? "bullet-point active-bullet-point"
-                        : "bullet-point"
-                    }
-                  ></li>
-                ))}
-              </div>
+
+        <div className="deck">
+          <img
+            src={empiresArray[currentIndex].empireLogo}
+            alt=""
+            height={"50px"}
+            style={{ position: "absolute", top: "10px", left: "-55px" }}
+          ></img>
+          <div className="deck-nav">
+            <div className="deck-name">
+              {empiresArray[currentIndex].empireName}
+            </div>
+            <div className="carousel-nav">
+              {empiresArray.map((empire, index) => (
+                <li
+                  key={index}
+                  className={
+                    currentIndex === index
+                      ? "bullet-point active-bullet-point"
+                      : "bullet-point"
+                  }
+                ></li>
+              ))}
             </div>
           </div>
         </div>

@@ -1,8 +1,9 @@
 import "../css/LeaderSelection.css";
-import pileCards from "../assets/icons/icone_menu_gwent/pile_cards.svg";
-import unitCards from "../assets/icons/icone_menu_gwent/units_cards.svg";
-import specialCards from "../assets/icons/icone_menu_gwent/special_cards.svg";
-import knight from "../assets/icons/icone_menu_gwent/knight.svg";
+import pileCards from "../assets/icons/menu_icons/pile_cards.svg";
+import unitCards from "../assets/icons/menu_icons/units_cards.svg";
+import specialCards from "../assets/icons/menu_icons/special_cards.svg";
+import strength from "../assets/icons/menu_icons/strength.svg";
+import knight from "../assets/icons/menu_icons/knight.svg";
 
 const LeaderSelection = () => {
   return (
@@ -35,7 +36,7 @@ const LeaderSelection = () => {
           <p>Special Cards in deck</p>
           <div className="data-wrapper">
             <img
-              src={unitCards}
+              src={specialCards}
               alt=""
               style={{ height: "25px", filter: "invert(0.4) sepia(1)" }}
             ></img>
@@ -46,7 +47,7 @@ const LeaderSelection = () => {
           <p>Total Unit Cards Strength</p>
           <div className="data-wrapper">
             <img
-              src={specialCards}
+              src={strength}
               alt=""
               style={{ height: "25px", filter: "invert(0.4) sepia(1)" }}
             ></img>
