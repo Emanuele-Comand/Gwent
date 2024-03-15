@@ -10,10 +10,16 @@ function App() {
   const [deckName, setDeckName] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedCards, setSelectedCards] = useState([]);
+  const [filterType, setFilterType] = useState("");
 
   const [data, setData] = useState([]);
   const addCardToDeck = (card) => {
     setSelectedCards((prevCards) => [...prevCards, card]);
+  };
+
+  const setSelectedCategoryAndType = (category, type) => {
+    setSelectedCategory(category);
+    setFilterType(type);
   };
 
   useEffect(() => {
@@ -29,6 +35,30 @@ function App() {
       });
   }, []);
 
+  const filteredData = data.filter((d) => {
+    if (selectedCategory === "Heroes" && d.attributes.type === "Heroes") {
+      return d.attributes.deck === deckName || d.attributes.deck === "Neutral";
+    } else if (
+      selectedCategory === "Weather" &&
+      d.attributes.type === "Weather"
+    ) {
+      return d.attributes.deck === "Neutral";
+    } else if (
+      selectedCategory === "Special" &&
+      d.attributes.type === "Special"
+    ) {
+      return d.attributes.deck === "Neutral";
+    } else {
+      return (
+        d.attributes.deck === deckName &&
+        d.attributes.type !== "Leaders" &&
+        (selectedCategory === "" ||
+          d.attributes[filterType] === selectedCategory)
+      );
+    }
+  });
+
+  console.log(filteredData); // Dopo che il filtraggio è stato applicato
   return (
     <>
       <div className="container">
@@ -38,16 +68,13 @@ function App() {
         <section className="main">
           <div className="cardsCollection-wrapper">
             <CardsCollection
-              cards={data.filter(
-                (d) =>
-                  d.attributes.deck === deckName &&
-                  d.attributes.type !== "Leaders" &&
-                  (selectedCategory === "" ||
-                    d.attributes.row === selectedCategory)
-              )}
+              cards={filteredData}
               onCardClick={addCardToDeck}
-              selectedCategory={selectedCategory}
-              onCategoryClick={setSelectedCategory}
+              selectedCategory={(cat, type) => {
+                setSelectedCategory(cat);
+                setFilterType(type);
+              }}
+              onCategoryClick={setSelectedCategoryAndType}
             />
           </div>
           <div className="leaderSelection-wrapper">

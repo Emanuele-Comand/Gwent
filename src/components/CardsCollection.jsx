@@ -8,12 +8,7 @@ import weather from "../assets/icons/menu_icons/sun.svg";
 import special from "../assets/icons/menu_icons/special.svg";
 import Card from "./Card";
 
-const CardsCollection = ({
-  cards,
-  onCardClick,
-  selectedCategory,
-  onCategoryClick,
-}) => {
+const CardsCollection = ({ cards, onCardClick, onCategoryClick }) => {
   return (
     <>
       <h3 className="title">Card collection</h3>
@@ -35,7 +30,7 @@ const CardsCollection = ({
             src={closeCombat}
             style={{ height: "33px", filter: "invert(0.4) sepia(1)" }}
             alt=""
-            onClick={() => onCategoryClick("Close combat")}
+            onClick={() => onCategoryClick("Close combat", "row")}
           ></img>
         </li>
         <li className="category">
@@ -43,7 +38,7 @@ const CardsCollection = ({
             src={ranged}
             style={{ height: "33px", filter: "invert(0.4) sepia(1)" }}
             alt=""
-            onClick={() => onCategoryClick("Ranged combat")}
+            onClick={() => onCategoryClick("Ranged combat", "row")}
           ></img>
         </li>
         <li className="category">
@@ -51,7 +46,7 @@ const CardsCollection = ({
             src={siege}
             style={{ height: "33px", filter: "invert(0.4) sepia(1)" }}
             alt=""
-            onClick={() => onCategoryClick("Siege")}
+            onClick={() => onCategoryClick("Siege", "row")}
           ></img>
         </li>
         <li className="category">
@@ -59,6 +54,7 @@ const CardsCollection = ({
             src={knight}
             style={{ height: "33px", filter: "invert(0.4) sepia(1)" }}
             alt=""
+            onClick={() => onCategoryClick("Heroes", "type")}
           ></img>
         </li>
         <li className="category">
@@ -66,6 +62,7 @@ const CardsCollection = ({
             src={weather}
             style={{ height: "33px", filter: "invert(0.4) sepia(1)" }}
             alt=""
+            onClick={() => onCategoryClick("Weather", "type")}
           ></img>
         </li>
         <li className="category">
@@ -73,18 +70,14 @@ const CardsCollection = ({
             src={special}
             style={{ height: "33px", filter: "invert(0.4) sepia(1)" }}
             alt=""
+            onClick={() => onCategoryClick("Special", "type")}
           ></img>
         </li>
       </ul>
       <div className="cards-container">
-        {cards
-          .filter(
-            (c) =>
-              selectedCategory === "" || c.attributes.row === selectedCategory
-          )
-          .map((c) => (
-            <Card data={c} onCardClick={() => onCardClick(c)} />
-          ))}
+        {cards.map((c) => (
+          <Card data={c} onCardClick={() => onCardClick(c)} />
+        ))}
       </div>
     </>
   );

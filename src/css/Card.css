@@ -3,6 +3,9 @@
 }
 
 .card-wrapper > img {
+  width: 100%;
+  max-width: 170px;
+  object-fit: cover;
   cursor: pointer;
 }
 
