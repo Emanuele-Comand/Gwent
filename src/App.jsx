@@ -35,27 +35,25 @@ function App() {
       });
   }, []);
 
+  console.log("......", selectedCategory, filterType);
   const filteredData = data.filter((d) => {
     if (selectedCategory === "Heroes" && d.attributes.type === "Heroes") {
       return d.attributes.deck === deckName || d.attributes.deck === "Neutral";
-    } else if (
-      selectedCategory === "Weather" &&
-      d.attributes.type === "Weather"
-    ) {
+    }
+    if (selectedCategory === "Weather" && d.attributes.type === "Weather") {
       return d.attributes.deck === "Neutral";
-    } else if (
-      selectedCategory === "Special" &&
-      d.attributes.type === "Special"
-    ) {
-      return d.attributes.deck === "Neutral";
-    } else {
+    }
+    if (selectedCategory === "Special" && filterType === "type") {
       return (
-        d.attributes.deck === deckName &&
-        d.attributes.type !== "Leaders" &&
-        (selectedCategory === "" ||
-          d.attributes[filterType] === selectedCategory)
+        d.attributes.deck === "Neutral" &&
+        (d.attributes.type === "Weather" || d.attributes.type === "Special")
       );
     }
+    return (
+      d.attributes.deck === deckName &&
+      d.attributes.type !== "Leaders" &&
+      (selectedCategory === "" || d.attributes[filterType] === selectedCategory)
+    );
   });
 
   console.log(filteredData); // Dopo che il filtraggio è stato applicato
