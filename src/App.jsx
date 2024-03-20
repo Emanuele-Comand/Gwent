@@ -35,7 +35,6 @@ function App() {
       });
   }, []);
 
-  console.log("......", selectedCategory, filterType);
   const filteredData = data.filter((d) => {
     if (selectedCategory === "Heroes" && d.attributes.type === "Heroes") {
       return d.attributes.deck === deckName || d.attributes.deck === "Neutral";
@@ -56,7 +55,11 @@ function App() {
     );
   });
 
-  console.log(filteredData); // Dopo che il filtraggio è stato applicato
+  const leaders = data.filter((d) => {
+    return d.attributes.deck === deckName && d.attributes.type === "Leaders";
+  });
+
+  console.log(leaders); // Dopo che il filtraggio è stato applicato
   return (
     <>
       <div className="container">
@@ -76,7 +79,7 @@ function App() {
             />
           </div>
           <div className="leaderSelection-wrapper">
-            <CentralSelection />
+            <CentralSelection leaders={leaders} />
           </div>
           <div className="deckCards-wrapper">
             <DeckCards

@@ -10,10 +10,9 @@ const Card = ({ data, onCardClick }) => {
         <img
           src={
             "https://raw.githubusercontent.com/day-s-ea/API-Gwent/main/img_gwentCards/" +
-            data.img.faction
+            (data.img.faction || data.img.description)
           }
           alt=""
-          // style={{ width: "145px" }}
         ></img>
       </div>
     </>

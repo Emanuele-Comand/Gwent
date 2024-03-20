@@ -4,12 +4,16 @@ import unitCards from "../assets/icons/menu_icons/units_cards.svg";
 import specialCards from "../assets/icons/menu_icons/special_cards.svg";
 import strength from "../assets/icons/menu_icons/strength.svg";
 import knight from "../assets/icons/menu_icons/knight.svg";
+import Card from "./Card";
 
-const LeaderSelection = () => {
+const LeaderSelection = ({ leaders }) => {
   return (
     <>
       <div className="component-wrapper">
         <h3 className="leader-title">Leader</h3>
+        <div className="leader-box">
+          <Card data={leaders[0]} />
+        </div>
         <div className="total-wrapper">
           <p>Total cards in deck</p>
           <div className="data-wrapper">
