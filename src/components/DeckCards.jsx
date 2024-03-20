@@ -68,9 +68,11 @@ const DeckCards = ({ cards, selectedCategory }) => {
         </li>
       </ul>
       <div className="cards-container">
-        {cards.map((c) => (
-          <Card data={c} />
-        ))}
+        <div className="box-cards">
+          {cards.map((c) => (
+            <Card data={c} />
+          ))}
+        </div>
       </div>
     </>
   );

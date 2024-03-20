@@ -35,11 +35,7 @@ const LeaderSelection = () => {
         <div className="special-wrapper">
           <p>Special Cards in deck</p>
           <div className="data-wrapper">
-            <img
-              src={specialCards}
-              alt=""
-              style={{ height: "25px", filter: "invert(0.4) sepia(1)" }}
-            ></img>
+            <img src={specialCards} alt="" style={{ height: "25px" }}></img>
             <span>n°</span>
           </div>
         </div>

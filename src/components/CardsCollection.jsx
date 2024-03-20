@@ -75,9 +75,11 @@ const CardsCollection = ({ cards, onCardClick, onCategoryClick }) => {
         </li>
       </ul>
       <div className="cards-container">
-        {cards.map((c) => (
-          <Card data={c} onCardClick={() => onCardClick(c)} />
-        ))}
+        <div className="box-cards">
+          {cards.map((c) => (
+            <Card data={c} onCardClick={() => onCardClick(c)} />
+          ))}
+        </div>
       </div>
     </>
   );

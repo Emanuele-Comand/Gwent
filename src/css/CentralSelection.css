@@ -1,23 +1,28 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .component-wrapper {
-    margin-top: 150px;
+  margin-top: 150px;
 }
 
 .leader-title {
-    text-align: center;
-    filter: invert(0.4) sepia(1);
+  text-align: center;
+  filter: invert(0.4) sepia(1);
 }
 
 p {
-    text-align: center;
+  text-align: center;
 }
 
 .data-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.data-wrapper > img {
+  filter: invert(42%) sepia(93%) saturate(200%) hue-rotate(87deg)
+    brightness(100%) contrast(119%);
 }

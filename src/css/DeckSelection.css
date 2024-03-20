@@ -6,9 +6,8 @@ div {
 
 .deck-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 30px;
   padding-top: 20px;
   background: transparent;
 }
@@ -18,6 +17,7 @@ div {
   width: 100%;
   max-width: 160px;
   white-space: nowrap;
+  text-align: right;
 }
 
 .next-deck {
@@ -26,6 +26,7 @@ div {
   max-width: 160px;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: left;
 }
 
 /* Central Items of Big menu */
@@ -93,4 +94,14 @@ div {
 .btn:hover {
   transform: scale(1.2);
   transition: 1s;
+}
+
+.prev-btn {
+  margin-right: 110px;
+  margin-left: 20px;
+}
+
+.next-btn {
+  margin-left: 110px;
+  margin-right: 20px;
 }
